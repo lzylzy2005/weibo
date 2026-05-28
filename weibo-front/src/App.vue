@@ -1,0 +1,53 @@
+<template>
+  <div class="box">
+    <h1>本地微博</h1>
+
+    <div class="publish">
+      <textarea v-model="content" rows="4" placeholder="说点什么..."></textarea>
+      <button @click="publish">发布微博</button>
+    </div>
+
+    <div class="list">
+      <div class="item" v-for="item in list" :key="item.id">
+        <p>{{ item.content }}</p>
+        <span>{{ item.createTime }}</span>
+      </div>
+    </div>
+  </div>
+</template>
+
+<script>
+import axios from 'axios'
+axios.defaults.baseURL = 'http://localhost:8080/api'
+
+export default {
+  name: 'App',
+  data() {
+    return {
+      content: '',
+      list: []
+    }
+  },
+  mounted() {
+    this.getList()
+  },
+  methods: {
+    async getList() {
+      const res = await axios.get('/weibo')
+      this.list = res.data.data
+    },
+    async publish() {
+      await axios.post('/weibo', { content: this.content })
+      this.content = ''
+      this.getList()
+    }
+  }
+}
+</script>
+
+<style>
+.box { width: 600px; margin: 0 auto; padding: 20px; }
+.publish { margin-bottom: 20px; }
+textarea { width: 100%; padding: 10px; margin-bottom: 10px; }
+.item { border: 1px solid #ddd; padding: 15px; margin-bottom: 10px; border-radius: 8px; }
+</style>
