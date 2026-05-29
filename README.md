@@ -10,3 +10,6 @@ ctrl+c
 开始
 停止
 后端接口 http://localhost:8080/api/weibo
+
+### 远程仓库进入
+mysql -h mysql-weibo-lzylzy1204-8367.l.aivencloud.com -P 19010 -u avnadmin -pAVNS_w6lkitdE9AzXdyoxASJ --ssl-mode=REQUIRED defaultdb
