@@ -10,7 +10,7 @@
     <div class="list">
       <div class="item" v-for="item in list" :key="item.id">
         <p>{{ item.content }}</p>
-        <span>{{ item.createTime }}</span>
+        <span>{{ formatTime(item.createTime) }}</span>
       </div>
     </div>
   </div>
@@ -40,6 +40,10 @@ export default {
       await axios.post('/weibo', { content: this.content })
       this.content = ''
       this.getList()
+    },
+    formatTime(time) {
+      if (!time) return ''
+        return time.replace('T', ' ').substring(0, 19)
     }
   }
 }
