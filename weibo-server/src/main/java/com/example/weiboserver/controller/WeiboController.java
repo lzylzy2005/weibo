@@ -15,7 +15,7 @@ public class WeiboController {
     private WeiboService weiboService;
 
     // 获取所有微博
-    @GetMapping("/weibo")
+    @GetMapping("/Weibo")
     public Map<String, Object> list() {
         Map<String, Object> map = new HashMap<>();
         map.put("code", 200);
@@ -24,7 +24,7 @@ public class WeiboController {
     }
 
     // 发布微博
-    @PostMapping("/weibo")
+    @PostMapping("/Weibo")
     public Map<String, Object> add(@RequestBody Weibo weibo) {
         Map<String, Object> map = new HashMap<>();
         weiboService.add(weibo);
