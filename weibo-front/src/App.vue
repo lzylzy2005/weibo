@@ -11,6 +11,7 @@
       <div class="item" v-for="item in list" :key="item.id">
         <p>{{ item.content }}</p>
         <span>{{ formatTime(item.createTime) }}</span>
+        <span>{{ item.userid }}</span>
       </div>
     </div>
   </div>
