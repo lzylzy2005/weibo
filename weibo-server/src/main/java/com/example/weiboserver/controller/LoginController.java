@@ -14,7 +14,7 @@ public class LoginController {
     private UserService userService;
 
     // 接收 POST 请求，路径是 /api/login
-    @PostMapping("/Login")
+    @PostMapping("/login")
     public Map<String, Object> login(@RequestBody Map<String, String> loginData) {
         String username = loginData.get("username");
         String password = loginData.get("password");
