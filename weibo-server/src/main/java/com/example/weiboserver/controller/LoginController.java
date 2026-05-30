@@ -13,6 +13,12 @@ public class LoginController {
     @Resource
     private UserService userService;
 
+
+    @GetMapping("/test")
+    public String test() {
+        return "ok";
+    }
+
     // 接收 POST 请求，路径是 /api/login
     @PostMapping("/login")
     public Map<String, Object> login(@RequestBody Map<String, String> loginData) {
