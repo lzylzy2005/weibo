@@ -24,7 +24,7 @@
 import axios from 'axios';
 
 // 配置后端接口根地址（根据你的实际地址修改）
-axios.defaults.baseURL = 'https://weibo-production.up.railway.app';
+axios.defaults.baseURL = 'https://weibo-production.up.railway.app/api';
 
 export default {
   name: 'LoginPage',
