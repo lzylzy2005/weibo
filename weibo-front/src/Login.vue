@@ -45,7 +45,7 @@ export default {
       this.errorMsg = ''; // 清空旧的错误信息
 
       try {
-        const res = await axios.post('/api/login', {
+        const res = await axios.post('/login', {
           username: this.username,
           password: this.password
         });
