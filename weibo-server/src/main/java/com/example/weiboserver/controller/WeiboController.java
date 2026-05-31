@@ -25,9 +25,14 @@ public class WeiboController {
 
     // 发布微博
     @PostMapping("/weibo")
-    public Map<String, Object> add(@RequestBody Weibo weibo) {
+    public Map<String, Object> add(
+            @RequestBody String weibo,
+            @RequestHeader("token")String token)
+    {
+        Integer userid = Integer.parseInt(token);
+        weiboService.add(weibo, userid);
+
         Map<String, Object> map = new HashMap<>();
-        weiboService.add(weibo);
         map.put("code", 200);
         map.put("msg", "发布成功");
         return map;

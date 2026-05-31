@@ -15,7 +15,7 @@ public class WeiboService {
         return weiboMapper.findAll();
     }
 
-    public int add(Weibo weibo) {
-        return weiboMapper.addWeibo(weibo);
+    public int add(String weibo, Integer userid) {
+        return weiboMapper.addWeibo(weibo, userid);
     }
 }

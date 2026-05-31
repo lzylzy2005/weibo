@@ -38,7 +38,13 @@ export default {
       this.list = res.data.data
     },
     async publish() {
-      await axios.post('/weibo', { content: this.content })
+      await axios.post('/weibo',
+      { content: this.content },
+      { 
+        headers:{
+        token: localStorage.getItem('token')
+        }
+      })
       this.content = ''
       this.getList()
     },

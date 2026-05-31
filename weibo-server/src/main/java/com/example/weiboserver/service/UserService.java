@@ -19,10 +19,8 @@ public class UserService {
         }
         // 注意：实际开发中密码要加密比对，这里简单用明文（假设数据库存的也是明文）
         if (user.getPassword().equals(password)) {
-            // 生成一个简单的 token（可以是 UUID，也可以是 JWT）
-            String token = java.util.UUID.randomUUID().toString();
-            // 实际项目中你可能需要把 token 存到 Redis 或使用 JWT 签名
-            return token;
+            //直接返回userid
+            return user.getId().toString();
         }
         return null;
     }

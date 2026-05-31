@@ -9,6 +9,6 @@ public interface WeiboMapper {
     @Select("SELECT id, content, create_time as createTime, user_id as userId FROM weibo ORDER BY create_time DESC")
     List<Weibo> findAll();
 
-    @Insert("INSERT INTO weibo(content) VALUES(#{content})")
-    int addWeibo(Weibo weibo);
+    @Insert("INSERT INTO weibo(content, use_id) VALUES(#{content}, #{userid})")
+    int addWeibo(String weibo, long userid);
 }
