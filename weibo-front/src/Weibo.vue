@@ -9,7 +9,7 @@
 
     <div class="list">
       <div class="item" v-for="item in list" :key="item.id">
-        <p>用户：{{ item.username }}</p>
+        <p>用户：{{ item.userId }}</p>
         <p>{{ item.content }}</p>
         <p>{{ formatTime(item.createTime) }}</p>
       </div>
