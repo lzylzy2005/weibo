@@ -26,11 +26,12 @@ public class WeiboController {
     // 发布微博
     @PostMapping("/weibo")
     public Map<String, Object> add(
-            @RequestBody String weibo,
+            @RequestBody Map<String, String> weibo,
             @RequestHeader("token")String token)
     {
+        String content = weibo.get("content");
         Integer userid = Integer.parseInt(token);
-        weiboService.add(weibo, userid);
+        weiboService.add(content, userid);
 
         Map<String, Object> map = new HashMap<>();
         map.put("code", 200);
