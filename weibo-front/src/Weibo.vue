@@ -18,11 +18,11 @@
 </template>
 
 <script>
-import axios from 'axios'
-axios.defaults.baseURL = 'https://weibo-production.up.railway.app/api'
+import axios from 'axios';
+axios.defaults.baseURL = 'https://weibo-production.up.railway.app/api';
 
 export default {
-  name: 'Weibo',
+  name: 'App',
   data() {
     return {
       content: '',
