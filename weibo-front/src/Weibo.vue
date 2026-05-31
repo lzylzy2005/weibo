@@ -22,7 +22,7 @@ import axios from 'axios'
 axios.defaults.baseURL = 'https://weibo-production.up.railway.app/api'
 
 export default {
-  name: 'App',
+  name: 'Weibo',
   data() {
     return {
       content: '',
